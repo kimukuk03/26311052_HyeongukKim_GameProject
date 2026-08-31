@@ -41,6 +41,7 @@ UpgradeLog.htm
 *.suo
 *.VC.db
 *.opensdf
+*.vcxproj.user
 
 ########################################
 # android studio
