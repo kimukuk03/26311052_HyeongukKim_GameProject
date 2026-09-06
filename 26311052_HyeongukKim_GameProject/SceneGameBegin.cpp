@@ -3,7 +3,7 @@
 
 int SceneGameBegin::Init()
 {
-	this->m_txPong = g2_TextureLoad("resource/texture/PongBackground.jpg");
+	this->m_txPong = g2_TextureLoad("resource/texture/pongbackground.png");
 
 	return 0;
 }
@@ -21,6 +21,6 @@ int SceneGameBegin::Update()
 int SceneGameBegin::Render()
 {
 	g2_Draw2D(m_txPong, nullptr);
-
+	
 	return 0;
 }

@@ -17,7 +17,7 @@ protected:
 protected:
 	//windows
 	POINT m_winPos  { 100, 100 };
-	SIZE m_winSize  { 800, 600 };
+	SIZE m_winSize  { 1200, 900 };
 	std::string m_winName = "Reverse Pong";
 
 	SceneGameBegin m_sceneBegin;

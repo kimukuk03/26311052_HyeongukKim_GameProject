@@ -20,7 +20,7 @@ bool CApplication::Init()
 
 	m_sceneBegin.Init();
 
-	return 0;
+	return true;
 }
 	
 int CApplication::Update()
