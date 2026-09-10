@@ -3,13 +3,13 @@
 
 int SceneGamePlay::Init()
 {
-	m_txBall = g2_TextureLoad("resource/texture/ball.png");
-
 	m_ball.x = 400;
 	m_ball.y = 300;
 
 	m_ball.vx = 3;
 	m_ball.vy = 2;
+
+
 
 	return 0;
 }

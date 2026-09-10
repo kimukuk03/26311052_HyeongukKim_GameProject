@@ -2,8 +2,6 @@
 #include "glc2d.h"
 #include "CApplication.h"
 
-extern CApplication g_app;
-
 int AppUpdate()
 {
 	return g_app.Update();
@@ -45,6 +43,11 @@ int CApplication::Destroy()
 	g2_DestroyWin();
 
 	return 0;
+}
+
+SIZE CApplication::GetWinSize()
+{
+	return SIZE();
 }
 
 int CApplication::InitSdk()

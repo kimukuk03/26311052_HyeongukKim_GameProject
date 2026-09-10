@@ -11,15 +11,20 @@ public:
 	int Render();
 	int Destroy();
 
+public:
+	SIZE GetWinSize();
+
 protected:
 	int InitSdk();
 
 protected:
 	//windows
-	POINT m_winPos  { 100, 100 };
-	SIZE m_winSize  { 1200, 900 };
+	POINT m_winPos  { 250, 100 };
+	SIZE m_winSize  { 1366, 768 };
 	std::string m_winName = "Reverse Pong";
 
 	SceneGameBegin m_sceneBegin;
 };
 
+//전역 접근
+extern CApplication g_app;

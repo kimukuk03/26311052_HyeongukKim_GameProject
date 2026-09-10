@@ -17,6 +17,8 @@
 #include "glc2d.h"
 #include "CApplication.h"
 
+//생성(Create) - 소멸(Destroy) - 초기화(Init) - 갱신(Update) - 랜더링(Render) 순서로
+//2d game = Texture, font, Audio, Input
 CApplication g_app;
 
 int main()

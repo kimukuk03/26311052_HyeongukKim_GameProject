@@ -10,5 +10,8 @@ public:
 
 protected:
 	//game texture
-	int m_txPong = -1;
+	int m_txBG = -1;
+	int m_txUI_start = -1;
+	int m_txUI_exit = -1;
+	int m_txUI_chose = -1;
 };	
