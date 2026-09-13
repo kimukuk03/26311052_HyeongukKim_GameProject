@@ -2,6 +2,7 @@
 #include "glc2d.h"
 #include "CApplication.h"
 
+extern CApplication g_app;
 //구현해야될것
 //플레이화면 점수 출력
 //종료화면 점수 출력
@@ -24,6 +25,19 @@ int SceneGameBegin::Destroy()
 
 int SceneGameBegin::Update()
 {
+	int mouseX = g2_GetMouseX();
+	int mouseY = g2_GetMouseY();
+
+	if (g2_GetMouseEvent(0) == EINPUT_DOWN)
+	{
+		// START 버튼 영역
+		if (mouseX >= 1000 && mouseX <= 1350 &&
+			mouseY >= 430 && mouseY <= 600)
+		{
+			g_app.ChangeScene(SceneType::PLAY);
+		}
+	}
+
 	return 0;
 }
 
@@ -31,7 +45,7 @@ int SceneGameBegin::Render()
 {
 	//홈화면 배경 출력
 	{
-		VEC2 position_BG{ 200.0f, 0.0f };
+		VEC2 position_BG{ 0.0f, 0.0f };
 		VEC2 scale{ 0.75f, 0.75f };
 		g2_Draw2D(m_txBG, nullptr, &position_BG, &scale);
 	}

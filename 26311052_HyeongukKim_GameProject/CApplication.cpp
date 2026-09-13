@@ -23,16 +23,49 @@ bool CApplication::Init()
 	
 int CApplication::Update()
 {
-	m_sceneBegin.Update();
-
+	if (m_scene == SceneType::BEGIN)
+	{
+		m_sceneBegin.Update();
+	}
+	else if (m_scene == SceneType::PLAY)
+	{
+		m_scenePlay.Update();
+	}
 	return 0;
 }
 
 int CApplication::Render()
 {
-	m_sceneBegin.Render();
-
+	if (m_scene == SceneType::BEGIN)
+	{
+		m_sceneBegin.Render();
+	}
+	else if (m_scene == SceneType::PLAY)
+	{
+		m_scenePlay.Render();
+	}
 	return 0;
+}
+void CApplication::ChangeScene(SceneType scene)
+{
+	if (m_scene == SceneType::BEGIN)
+	{
+		m_sceneBegin.Destroy();
+	}
+	else if (m_scene == SceneType::PLAY)
+	{
+		m_scenePlay.Destroy();
+	}
+	m_scene = scene;
+
+	if (m_scene == SceneType::BEGIN)
+	{
+		m_sceneBegin.Init();
+	}
+	else if (m_scene == SceneType::PLAY)
+	{
+		m_scenePlay.Init();
+	}
 }
 
 int CApplication::Destroy()
