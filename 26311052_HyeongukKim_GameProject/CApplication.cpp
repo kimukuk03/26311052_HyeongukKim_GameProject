@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "glc2d.h"
 #include "CApplication.h"
 
@@ -17,6 +16,7 @@ bool CApplication::Init()
 	InitSdk();
 
 	m_sceneBegin.Init();
+	BG_sound = g2_SoundLoad("sound/bounce.wav");
 
 	return true;
 }
@@ -91,7 +91,7 @@ int CApplication::InitSdk()
 	g2_SetFrameMove(AppUpdate);
 	g2_SetRender(AppRender);
 
-	// 윈도우 생성
+	// 불러오기
 	g2_CreateWin(m_winPos.x, m_winPos.y,
 				m_winSize.cx, m_winSize.cy,
 				m_winName.c_str());

@@ -31,8 +31,8 @@ protected:
 
 protected:
 	// windows
-	POINT m_winPos{ 250, 100 };
-	SIZE m_winSize{ 1366, 768 };
+	POINT m_winPos{ 250, 100 };						//창 열리는 위치
+	SIZE m_winSize{ 1366, 768 };					//창 크기
 	std::string m_winName = "Reverse Pong";
 
 	// 현재 Scene
@@ -41,6 +41,9 @@ protected:
 	// Scene 객체
 	SceneGameBegin m_sceneBegin;
 	SceneGamePlay m_scenePlay;
+
+protected://사운드 
+	
 };
 
 

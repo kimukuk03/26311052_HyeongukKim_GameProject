@@ -30,3 +30,18 @@ int main()
 
 	return 0;
 }
+/* 
+	//이미지 인덱스 
+int nTx;
+nTx = g2_TextureLoad("Texture/tst.png"); 
+g2_Draw2D(nTx, NULL, &g_vcPos); 
+	//폰트 인덱스 
+int nFont; 
+nFont = g2_FontCreate("굴림", 20, false); 
+RECT rc{0, 10, 500, 40}; g2_FontDrawText(nFonts, {}
+	//마우스 위치 읽기 
+auto mouseX = g2_GetMouseX(); 
+auto mouseY = g2_GetMouseX(); 
+auto mouseZ = g2_GetMouseX(); 
+auto pKeyboard = g2_GetKeyboard();
+*/
