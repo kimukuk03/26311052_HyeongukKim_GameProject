@@ -133,7 +133,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CApplication.cpp" />
-    <ClCompile Include="SceneGameBegin.cpp" />
+    <ClCompile Include="SceneGameBegin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SceneGameBegin.h" />
     <ClCompile Include="SceneGamePlay.cpp" />
     <ClCompile Include="SceneGameResult.cpp" />

@@ -16,7 +16,9 @@ bool CApplication::Init()
 	InitSdk();
 
 	m_sceneBegin.Init();
-	BG_sound = g2_SoundLoad("sound/bounce.wav");
+	BG_sound = g2_SoundLoad("resource/sound/bgm/background.wav");
+	UI_click_sound = g2_SoundLoad("resource/sound/interaction/ui_click.wav");
+	g2_SoundPlay(BG_sound, true);
 
 	return true;
 }
@@ -46,6 +48,7 @@ int CApplication::Render()
 	}
 	return 0;
 }
+
 void CApplication::ChangeScene(SceneType scene)
 {
 	if (m_scene == SceneType::BEGIN)
@@ -67,10 +70,18 @@ void CApplication::ChangeScene(SceneType scene)
 		m_scenePlay.Init();
 	}
 }
+void CApplication::PlayUIClick()
+{
+	g2_SoundPlay(UI_click_sound, false);
+}
 
 int CApplication::Destroy()
 {
 	m_sceneBegin.Destroy();
+	g2_SoundStop(BG_sound);
+	g2_SoundRelease(BG_sound);
+	g2_SoundRelease(UI_click_sound);
+	g2_DestroyWin();
 
 	// 윈도우 해제
 	g2_DestroyWin();

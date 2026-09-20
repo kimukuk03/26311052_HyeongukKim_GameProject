@@ -22,6 +22,7 @@ public:
 	int Destroy();
 
 	void ChangeScene(SceneType scene);
+	void PlayUIClick();
 
 public:
 	SIZE GetWinSize();
@@ -43,7 +44,8 @@ protected:
 	SceneGamePlay m_scenePlay;
 
 protected://»ç¿îµå 
-	
+	int BG_sound = -1;
+	int UI_click_sound = -1;
 };
 
 

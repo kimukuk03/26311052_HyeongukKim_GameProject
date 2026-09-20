@@ -19,6 +19,15 @@ int SceneGameBegin::Init()
 
 int SceneGameBegin::Destroy()
 {
+	g2_TextureRelease(m_txBG);
+	g2_TextureRelease(m_txUI_start);
+	g2_TextureRelease(m_txUI_exit);
+	g2_TextureRelease(m_txUI_chose);
+
+	m_txBG = -1;
+	m_txUI_start = -1;
+	m_txUI_exit = -1;
+	m_txUI_chose = -1;
 
 	return 0;
 }
@@ -34,6 +43,7 @@ int SceneGameBegin::Update()
 		if (mouseX >= 1000 && mouseX <= 1350 &&
 			mouseY >= 430 && mouseY <= 600)
 		{
+			g_app.PlayUIClick();
 			g_app.ChangeScene(SceneType::PLAY);
 		}
 	}

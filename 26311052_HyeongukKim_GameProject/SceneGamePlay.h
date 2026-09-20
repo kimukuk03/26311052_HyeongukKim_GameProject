@@ -1,22 +1,30 @@
 #pragma once
 
-struct Ball
+enum class BarSide
 {
-    float x;
-    float y;
-    float vx;
-    float vy;
+	TOP,
+	RIGHT,
+	BOTTOM,
+	LEFT
 };
 
 class SceneGamePlay
 {
 public:
-    int Init();
-    int Destroy();
-    int Update();
-    int Render();
+	int Init();
+	int Update();
+	int Render();
+	int Destroy();
 
-private:
-    Ball m_ball;
-    int m_txBall;
+protected:
+	// BAR 위치
+	int m_barX = 0;
+	int m_barY = 0;
+
+	// 가로 BAR 기준 크기
+	int m_barLength = 180;
+	int m_barThickness = 25;
+
+	// 현재 붙어 있는 벽
+	BarSide m_barSide = BarSide::BOTTOM;
 };
